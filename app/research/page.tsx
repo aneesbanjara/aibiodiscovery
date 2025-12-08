@@ -10,7 +10,7 @@ import {
 
 export default function ResearchPage() {
   return (
-    <main className="bounceIn max-w-3xl mx-auto px-4 py-16 text-center">
+    <main className="max-w-3xl mx-auto px-4 py-16 text-center">
       {/* Header Section */}
       <h1 className="text-3xl font-bold text-gray-900 mb-4">
         Our Research Methodology

@@ -14,16 +14,17 @@ const Navbar = () => {
       <Link href="/research" className="hover:text-[#0A84FF] transition">
         Research
       </Link>
+      <Link href="/team" className="hover:text-[#0A84FF] transition">
+        Team
+      </Link>
       {/* <Link href="/about" className="hover:text-[#0A84FF] transition">
         About
       </Link> */}
       <Link href="/vision" className="hover:text-[#0A84FF] transition">
         Vision
       </Link>
-      <Link href="/team" className="hover:text-[#0A84FF] transition">
-        Team
-      </Link>
-      <Link href="/vision" className="hover:text-[#0A84FF] transition">
+
+      <Link href="/contact" className="hover:text-[#0A84FF] transition">
         Contact
       </Link>
     </nav>

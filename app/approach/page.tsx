@@ -10,7 +10,7 @@ export default function TechnologyPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* THREE-STEP APPROACH SECTION */}
-      <section className="bounceIn py-20 bg-gray-50 text-center">
+      <section className="py-20 bg-gray-50 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           Our Approach: A Three-Step Process
         </h2>

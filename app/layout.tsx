@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AI Bio Discovery",
   description: "AI Bio Discovery",
+  icons: {
+    icon: "/officialLogo.ico",
+    apple: "/officialLogo.png",
+  },
 };
 
 export default function RootLayout({
