@@ -1,103 +1,162 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Button from "@/components/Button";
+import SectionHeader from "@/components/SectionHeader";
+import SectionText from "@/components/SectionText";
+
+import CounterCard from "@/components/CounterCard";
+import { Gauge, Crosshair, Bot } from "lucide-react";
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.3, // delay between cards
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col min-h-screen">
+      {/* HERO SECTION */}
+      <section
+        className="relative bg-cover bg-center text-white flex flex-col justify-center items-center text-center h-[80vh]"
+        style={{ backgroundImage: "url('/images/aiBioDiscoveryLP.png')" }}
+      >
+        <div className="bg-black/50 absolute inset-0" />
+        <div className="relative z-10 max-w-2xl px-4">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold mb-4 leading-tight"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Revolutionizing Drug Discovery <br /> with AI to Combat Bacterial
+            Infections
+          </motion.h1>
+          <Button text="Contact Us" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* CRISIS SECTION */}
+      <section className="py-20 bg-gray-50 text-center">
+        <SectionHeader title="The Global Crisis of Antibiotic Resistance" />
+        <SectionText text="Antibiotic resistance (AMR) is a silent pandemic. Every year, millions of infections are becoming untreatable. Without urgent action, we risk entering a post-antibiotic era where common infections and injuries could once again become fatal." />
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 mt-12">
+          <CounterCard
+            title="Annual Deaths"
+            end={1.27}
+            decimals={2}
+            suffix="M"
+            bottomText="Due to AMR"
+            color="red"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+
+          <CounterCard
+            title="Projected by 2050"
+            end={10}
+            suffix="M"
+            bottomText="Annual deaths of AMR"
+            color="red"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+
+          <CounterCard
+            title="Research Spend"
+            end={1}
+            suffix="B"
+            bottomText="USD Annually"
+            color="green"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      {/* FEATURES SECTION (your image) */}
+
+      <section className="py-20 bg-white">
+        <SectionHeader title="Al: The Next Frontier in Therapeutic Discovery" />
+        <SectionText text="Our proprietary Al platform revolutionizes the drug discovery pipeline. By analyzing vast biological datasets, we can identify novel antibiotic candidates at a speed and scale previously unimaginable, dramatically accelerating the path from lab to clinic." />
+
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-10 text-center">
+            {/* ITEM 1 */}
+            <div>
+              <div className="w-16 h-16 bg-[#C7F2FF] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Gauge className="text-[#0AA6E8]" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">
+                Accelerated Discovery
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Reduce discovery timelines from years to months through rapid,
+                intelligent screening of molecular compounds.
+              </p>
+            </div>
+
+            {/* ITEM 2 */}
+            <div>
+              <div className="w-16 h-16 bg-[#C7F2FF] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Crosshair className="text-[#0AA6E8]" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Higher Precision</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our AI models identify candidates with higher probabilities of
+                success, minimizing costly late-stage failures.
+              </p>
+            </div>
+
+            {/* ITEM 3 */}
+            <div>
+              <div className="w-16 h-16 bg-[#C7F2FF] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Bot className="text-[#0AA6E8]" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Novel Mechanisms</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Uncover unconventional antibacterial agents and mechanisms of
+                action to overcome existing resistance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA – Shaping the Future of Medicine */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+              Join Us in Shaping the Future of Medicine
+            </h2>
+
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
+              Discover how our AI-driven approach is creating a new paradigm in
+              the fight against infectious diseases. Explore our research, our
+              team, and the technology that powers our mission.
+            </p>
+
+            <button className="bg-[#22D3EE] hover:bg-[#1EC4DC] text-white font-semibold px-6 py-3 rounded-lg transition">
+              Explore Our Research
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="py-20 text-center">
+        <SectionHeader title="Ready to explore the future of therapeutic drug discovery?" />
+        <SectionText text="Contact us today to learn more about our research and how we can collaborate to address the global challenge of infectious bacterial diseases." />
+        <Button text="Learn More" />
+      </section>
     </div>
   );
 }
