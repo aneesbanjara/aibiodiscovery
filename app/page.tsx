@@ -10,6 +10,7 @@ import SectionText from "@/components/SectionText";
 
 import CounterCard from "@/components/CounterCard";
 import { Gauge, Crosshair, Bot } from "lucide-react";
+import Link from "next/link";
 
 const containerVariants = {
   hidden: {},
@@ -44,7 +45,9 @@ export default function Home() {
             Revolutionizing Drug Discovery <br /> with AI to Combat Bacterial
             Infections
           </motion.h1>
-          <Button text="Contact Us" />
+          <Link href="/contact">
+            <Button text="Contact Us" />
+          </Link>
         </div>
       </section>
 
@@ -144,9 +147,11 @@ export default function Home() {
               team, and the technology that powers our mission.
             </p>
 
-            <button className="bg-[#22D3EE] hover:bg-[#1EC4DC] text-white font-semibold px-6 py-3 rounded-lg transition">
-              Explore Our Research
-            </button>
+            <Link href="/research">
+              <button className="bg-[#22D3EE] hover:bg-[#1EC4DC] text-white font-semibold px-6 py-3 rounded-lg transition">
+                Explore Our Research
+              </button>{" "}
+            </Link>
           </div>
         </div>
       </section>

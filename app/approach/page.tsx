@@ -29,11 +29,12 @@ export default function TechnologyPage() {
               <Leaf size={36} className="text-[#0AA9E0]" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              1. Sourcing Natural Products
+              1. Sourcing Bioactive Compounds
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              We begin by gathering extensive data from a diverse range of
-              natural compounds, known for their biological activity.
+              We curate and analyze diverse bioactive molecules, with a strong
+              focus on enzyme inhibitors, leveraging their proven biological
+              interactions
             </p>
           </div>
 
@@ -46,7 +47,7 @@ export default function TechnologyPage() {
               2. AI-Powered Analysis
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Our proprietary AI algorithms analyze complex biological data to
+              AI algorithms are used to analyze complex biological data to
               predict molecular behavior and therapeutic potential.
             </p>
           </div>
@@ -78,9 +79,10 @@ export default function TechnologyPage() {
               </h2>
 
               <p className="text-gray-700 leading-relaxed max-w-xl">
-                Our AI platform has successfully identified compounds that
-                reverse antibiotic resistance in deadly pathogens, a critical
-                step forward in the fight against superbugs.
+                Our AI platform has successfully identified antibacterial
+                compounds that reverse antibiotic resistance in deadly
+                pathogens, a critical step forward in the fight against
+                superbugs.
               </p>
             </div>
 
@@ -88,13 +90,13 @@ export default function TechnologyPage() {
             <div className="md:w-1/3 flex justify-center bg-white rounded-2xl p-8 shadow-md">
               <div className="text-center">
                 <p className="text-gray-600 text-base font-semibold mb-2">
-                  Novel Compounds Identified
+                  New Antibacteria Identified
                 </p>
 
                 <h1 className="text-6xl font-bold text-blue-900">7</h1>
 
-                <p className="text-green-500 font-semibold text-sm mt-2 ">
-                  Resistance Reversing
+                <p className="text-green-500 font-semibold text-sm mt-2">
+                  That Reverse Antibiotic Resistance
                 </p>
               </div>
             </div>
