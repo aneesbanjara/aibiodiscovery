@@ -10,7 +10,7 @@ export default function ContactPage() {
         <h1 className="text-5xl font-semibold leading-tight">Get in Touch.</h1>
 
         <p className="mt-8 text-gray-300 max-w-md">
-          Reach out to AI BioDiscovery LLC. We’re here to answer your questions,
+          Reach out to AI BioDiscovery INC. We’re here to answer your questions,
           discuss collaboration opportunities, or provide more information about
           our research.
         </p>
