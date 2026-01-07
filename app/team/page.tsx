@@ -1,8 +1,47 @@
 "use client";
 
 import Image from "next/image";
+import { motion, type Variants } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import SectionText from "@/components/SectionText";
+
+/* =====================
+   Animation Variants
+===================== */
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const staggerGrid: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariant: Variants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function TeamPage() {
   const teamMembers = [
@@ -52,14 +91,31 @@ export default function TeamPage() {
   return (
     <div className="bg-gray-50 py-24">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <SectionHeader title="Meet Our Team" />
-        <SectionText text="Our multidisciplinary team blends microbiology, virology, AI-driven research, and financial leadership to advance therapeutic drug discovery." />
+        {/* Header */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <SectionHeader title="Meet Our Team" />
+          <SectionText text="Our multidisciplinary team blends microbiology, virology, AI-driven research, and financial leadership to advance therapeutic drug discovery." />
+        </motion.div>
 
-        <div className="grid gap-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Team Grid */}
+        <motion.div
+          variants={staggerGrid}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid gap-10 mt-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
           {teamMembers.map((member, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              variants={cardVariant}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* Photo Avatar */}
               <div className="mx-auto mb-6 h-24 w-24 rounded-full bg-gradient-to-br from-[#0A84FF] to-[#5AC8FA] p-[2px]">
@@ -92,9 +148,9 @@ export default function TeamPage() {
               <p className="text-sm text-gray-600 leading-relaxed">
                 {member.contribution}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

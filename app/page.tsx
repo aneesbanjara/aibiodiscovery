@@ -1,99 +1,145 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import SectionHeader from "@/components/SectionHeader";
 import SectionText from "@/components/SectionText";
-
 import CounterCard from "@/components/CounterCard";
+
 import { Gauge, Crosshair, Bot } from "lucide-react";
 import Link from "next/link";
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.3, // delay between cards
-    },
+// ===== FRAMER MOTION VARIANTS =====
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+const fadeIn: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.3 },
+  },
 };
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION */}
-      <section
+      <motion.section
         className="relative bg-cover bg-center text-white flex flex-col justify-center items-center text-center h-[80vh]"
         style={{ backgroundImage: "url('/images/aiBioDiscoveryLP.png')" }}
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
       >
         <div className="bg-black/50 absolute inset-0" />
-        <div className="relative z-10 max-w-2xl px-4">
+
+        <motion.div className="relative z-10 max-w-2xl px-4" variants={fadeUp}>
           <motion.h1
             className="text-4xl md:text-5xl font-bold mb-4 leading-tight"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Revolutionizing Drug Discovery <br /> with AI to Combat Bacterial
-            Infections
+            Revolutionizing Drug Discovery <br />
+            with AI to Combat Bacterial Infections
           </motion.h1>
+
           <Link href="/contact">
             <Button text="Contact Us" />
           </Link>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* CRISIS SECTION */}
-      <section className="py-20 bg-gray-50 text-center">
-        <SectionHeader title="The Global Crisis of Antibiotic Resistance" />
-        <SectionText text="Antibiotic resistance (AMR) is a silent pandemic. Every year, millions of infections are becoming untreatable. Without urgent action, we risk entering a post-antibiotic era where common infections and injuries could once again become fatal." />
+      <motion.section
+        className="py-20 bg-gray-50 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
+        <motion.div variants={fadeUp}>
+          <SectionHeader title="The Global Crisis of Antibiotic Resistance" />
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 mt-12">
-          <CounterCard
-            title="Annual Deaths"
-            end={1.27}
-            decimals={2}
-            suffix="M"
-            bottomText="Due to AMR"
-            color="red"
-          />
+        <motion.div variants={fadeUp}>
+          <SectionText text="Antibiotic resistance (AMR) is a silent pandemic. Every year, millions of infections are becoming untreatable. Without urgent action, we risk entering a post-antibiotic era where common infections and injuries could once again become fatal." />
+        </motion.div>
 
-          <CounterCard
-            title="Projected by 2050"
-            end={10}
-            suffix="M"
-            bottomText="Annual deaths of AMR"
-            color="red"
-          />
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 mt-12"
+          variants={staggerContainer}
+        >
+          <motion.div variants={fadeUp}>
+            <CounterCard
+              title="Annual Deaths"
+              end={1.27}
+              decimals={2}
+              suffix="M"
+              bottomText="Due to AMR"
+              color="red"
+            />
+          </motion.div>
 
-          <CounterCard
-            title="Research Spend"
-            end={1}
-            suffix="B"
-            bottomText="USD Annually"
-            color="green"
-          />
-        </div>
-      </section>
+          <motion.div variants={fadeUp}>
+            <CounterCard
+              title="Projected by 2050"
+              end={10}
+              suffix="M"
+              bottomText="Annual deaths of AMR"
+              color="red"
+            />
+          </motion.div>
 
-      {/* FEATURES SECTION (your image) */}
+          <motion.div variants={fadeUp}>
+            <CounterCard
+              title="Research Spend"
+              end={1}
+              suffix="B"
+              bottomText="USD Annually"
+              color="green"
+            />
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
-      <section className="py-20 bg-white">
-        <SectionHeader title="Al: The Next Frontier in Therapeutic Discovery" />
-        <SectionText text="Our proprietary Al platform revolutionizes the drug discovery pipeline. By analyzing vast biological datasets, we can identify novel antibiotic candidates at a speed and scale previously unimaginable, dramatically accelerating the path from lab to clinic." />
+      {/* FEATURES SECTION */}
+      <motion.section
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
+        <motion.div variants={fadeUp}>
+          <SectionHeader title="AI: The Next Frontier in Therapeutic Discovery" />
+        </motion.div>
 
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-10 text-center">
-            {/* ITEM 1 */}
-            <div>
+        <motion.div variants={fadeUp}>
+          <SectionText text="Our proprietary AI platform revolutionizes the drug discovery pipeline. By analyzing vast biological datasets, we can identify novel antibiotic candidates at a speed and scale previously unimaginable." />
+        </motion.div>
+
+        <motion.div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            className="grid md:grid-cols-3 gap-10 text-center"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeUp}>
               <div className="w-16 h-16 bg-[#C7F2FF] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Gauge className="text-[#0AA6E8]" size={32} />
               </div>
@@ -101,42 +147,37 @@ export default function Home() {
                 Accelerated Discovery
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Reduce discovery timelines from years to months through rapid,
-                intelligent screening of molecular compounds.
+                Reduce discovery timelines from years to months.
               </p>
-            </div>
+            </motion.div>
 
-            {/* ITEM 2 */}
-            <div>
+            <motion.div variants={fadeUp}>
               <div className="w-16 h-16 bg-[#C7F2FF] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Crosshair className="text-[#0AA6E8]" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Higher Precision</h3>
               <p className="text-gray-600 leading-relaxed">
-                Our AI models identify candidates with higher probabilities of
-                success, minimizing costly late-stage failures.
+                Identify candidates with higher probabilities of success.
               </p>
-            </div>
+            </motion.div>
 
-            {/* ITEM 3 */}
-            <div>
+            <motion.div variants={fadeUp}>
               <div className="w-16 h-16 bg-[#C7F2FF] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Bot className="text-[#0AA6E8]" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Novel Mechanisms</h3>
               <p className="text-gray-600 leading-relaxed">
-                Uncover unconventional antibacterial agents and mechanisms of
-                action to overcome existing resistance.
+                Discover unconventional antibacterial agents.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* CTA – Shaping the Future of Medicine */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-12 text-center">
+      <motion.section className="py-10 bg-gray-50">
+        <motion.div className="max-w-5xl mx-auto px-6">
+          <motion.div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 text-center">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
               Join Us in Shaping the Future of Medicine
             </h2>
@@ -152,16 +193,32 @@ export default function Home() {
                 Explore Our Research
               </button>{" "}
             </Link>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
-      {/* CTA SECTION */}
-      <section className="py-20 text-center">
-        <SectionHeader title="Ready to explore the future of therapeutic drug discovery?" />
-        <SectionText text="Contact us today to learn more about our research and how we can collaborate to address the global challenge of infectious bacterial diseases." />
-        <Button text="Learn More" />
-      </section>
+      {/* FINAL CTA */}
+      <motion.section
+        className="py-20 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+      >
+        <motion.div variants={fadeUp}>
+          <SectionHeader title="Ready to explore the future of therapeutic drug discovery?" />
+        </motion.div>
+
+        <motion.div variants={fadeUp}>
+          <SectionText text="Contact us today to learn more about our research and collaboration opportunities." />
+        </motion.div>
+
+        <motion.div variants={fadeUp}>
+          <Link href="/contact">
+            <Button text="Learn More" />
+          </Link>
+        </motion.div>
+      </motion.section>
     </div>
   );
 }

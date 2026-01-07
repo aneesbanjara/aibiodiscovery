@@ -8,15 +8,25 @@ const navItems = [
   { label: "Approach", href: "/approach" },
   { label: "Research", href: "/research" },
   { label: "Team", href: "/team" },
-  // { label: "Vision", href: "/vision" },
   { label: "Contact", href: "/contact" },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  mobile?: boolean;
+  onLinkClick?: () => void; // callback for mobile links
+}
+
+const Navbar = ({ mobile, onLinkClick }: NavbarProps) => {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
+    <nav
+      className={`${
+        mobile
+          ? "flex flex-col gap-4 p-4 text-lg font-medium"
+          : "hidden md:flex items-center gap-8 text-[15px] font-medium"
+      }`}
+    >
       {navItems.map((item) => {
         const isActive =
           pathname === item.href ||
@@ -26,25 +36,19 @@ const Navbar = () => {
           <Link
             key={item.href}
             href={item.href}
-            className={`
-              relative px-1 py-1 transition-colors
-              text-gray-700 hover:text-[#0A84FF]
-              ${isActive ? "text-[#0A84FF]" : ""}
-            `}
+            onClick={onLinkClick} // <-- close menu when clicked
+            className={`relative px-1 py-1 transition-colors text-gray-700 hover:text-[#0A84FF] ${
+              isActive ? "text-[#0A84FF]" : ""
+            }`}
           >
-            {isActive && (
+            {isActive && !mobile && (
               <>
-                {/* Top Left */}
                 <span className="absolute left-0 top-0 h-2 w-2 border-l-2 border-t-2 border-[#0A84FF]" />
-                {/* Top Right */}
                 <span className="absolute right-0 top-0 h-2 w-2 border-r-2 border-t-2 border-[#0A84FF]" />
-                {/* Bottom Left */}
                 <span className="absolute left-0 bottom-0 h-2 w-2 border-l-2 border-b-2 border-[#0A84FF]" />
-                {/* Bottom Right */}
                 <span className="absolute right-0 bottom-0 h-2 w-2 border-r-2 border-b-2 border-[#0A84FF]" />
               </>
             )}
-
             {item.label}
           </Link>
         );
