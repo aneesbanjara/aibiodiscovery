@@ -8,11 +8,20 @@ import {
   Activity,
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
-import Research4AImg from "@/public/images/research/4A.png";
-import Research5AImg from "@/public/images/research/5A.png";
-import Research6AImg from "@/public/images/research/6A.png";
-import Research8AImg from "@/public/images/research/8A.png";
-import Research9AImg from "@/public/images/research/9A.png";
+// import Research4AImg from "@/public/images/research/4A.png";
+// import Research5AImg from "@/public/images/research/5A.png";
+// import Research6AImg from "@/public/images/research/6A.png";
+// import Research8AImg from "@/public/images/research/8A.png";
+// import Research9AImg from "@/public/images/research/9A.png";
+import Research1Img from "@/public/images/research/1.png";
+import Research2Img from "@/public/images/research/2.png";
+import Research3Img from "@/public/images/research/3.png";
+import Research4Img from "@/public/images/research/4.png";
+import Research5Img from "@/public/images/research/5.png";
+import Research6Img from "@/public/images/research/6.png";
+import Research7Img from "@/public/images/research/7.png";
+import Research8Img from "@/public/images/research/8.png";
+import Research9Img from "@/public/images/research/9.png";
 import Image from "next/image";
 
 /* Animation Variants */
@@ -46,29 +55,49 @@ const fadeRight: Variants = {
 export default function ResearchPage() {
   const researchFigures = [
     {
-      img: Research4AImg,
-      label: "Figure 4A",
-      desc: "Disk diffusion assay evaluating antibacterial activity of ceftazidime. Strong synergistic effect with Compound C.",
+      img: Research1Img,
+      label: "",
+      desc: "",
     },
     {
-      img: Research5AImg,
-      label: "Figure 5A",
-      desc: "Reproducibility of the synergistic interaction between ceftazidime and Compound C.",
+      img: Research2Img,
+      label: "",
+      desc: "",
     },
     {
-      img: Research6AImg,
-      label: "Figure 6A",
-      desc: "Restored activity of penicillin G against resistant staphylococcus when combined with Compound C.",
+      img: Research3Img,
+      label: "",
+      desc: "",
     },
     {
-      img: Research8AImg,
-      label: "Figure 8A",
-      desc: "Compound C enhances ceftazidime activity while minimally affecting meropenem.",
+      img: Research4Img,
+      label: "",
+      desc: "",
     },
     {
-      img: Research9AImg,
-      label: "Figure 9A",
-      desc: "Selective activation of penicillin G by Compound C; cefoxitin remains unaffected.",
+      img: Research5Img,
+      label: "",
+      desc: "",
+    },
+    {
+      img: Research6Img,
+      label: "",
+      desc: "",
+    },
+    {
+      img: Research7Img,
+      label: "",
+      desc: "",
+    },
+    {
+      img: Research8Img,
+      label: "",
+      desc: "",
+    },
+    {
+      img: Research9Img,
+      label: "",
+      desc: "",
     },
   ];
 
@@ -205,15 +234,15 @@ export default function ResearchPage() {
         </motion.section>
       ))}
 
-      {/* Research Figures Section */}
+      {/* Research Figures – Featured Layout */}
       <motion.section
-        className="px-4 sm:px-6 py-12"
+        className="px-4 sm:px-6 py-20 bg-gradient-to-b from-white to-slate-50"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         <motion.h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14"
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -222,32 +251,58 @@ export default function ResearchPage() {
           Experimental Validation & Results
         </motion.h2>
 
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
-          {researchFigures.map((item, idx) => (
+        {/* Featured Figure */}
+        <motion.div
+          variants={fadeUp}
+          className="max-w-6xl mx-auto mb-16 bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden"
+        >
+          <div className="relative w-full h-[420px] bg-gray-100">
+            <Image
+              src={researchFigures[0].img}
+              alt={researchFigures[0].label}
+              fill
+              className="object-contain p-8"
+              unoptimized
+            />
+          </div>
+
+          <div className="p-6 sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-700 mb-2">
+              {researchFigures[0].label || "Featured Figure"}
+            </p>
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-4xl">
+              {researchFigures[0].desc ||
+                "Key experimental result demonstrating compound efficacy and validation."}
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Supporting Figures */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {researchFigures.slice(1).map((item, idx) => (
             <motion.div
               key={idx}
-              className="flex flex-col items-center w-full sm:w-56 text-center"
-              variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: { duration: 0.6 },
-                },
-              }}
+              variants={fadeUp}
+              className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition"
             >
-              <div className="rounded-full border-4 border-blue-300 overflow-hidden w-40 h-40 mb-4 shadow-lg">
+              <div className="relative w-full h-64 bg-gray-50">
                 <Image
                   src={item.img}
                   alt={item.label}
-                  width={160}
-                  height={160}
-                  className="object-cover w-full h-full"
+                  fill
+                  className="object-contain p-5 transition-transform duration-300 group-hover:scale-105"
                   unoptimized
                 />
               </div>
-              <p className="text-gray-600 mt-2 text-sm">{item.desc}</p>
+
+              <div className="p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-2">
+                  {item.label || `Figure ${idx + 2}`}
+                </p>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {item.desc || "Supporting experimental validation result."}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
