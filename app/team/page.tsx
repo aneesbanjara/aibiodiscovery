@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import SectionText from "@/components/SectionText";
+import Link from "next/link";
 
 /* =====================
    Animation Variants
@@ -47,6 +48,8 @@ export default function TeamPage() {
   const teamMembers = [
     {
       imgLink: "/images/team/ManfredPhilippPhD.png",
+      profileLink: "https://fulbright.org/manfred-philipp",
+      orgLink: "https://www.gc.cuny.edu/people/manfred-philipp",
       name: "Dr. Manfred Philipp",
       position: "Professor Emeritus",
       organization: "CUNY Graduate Center & Lehman College, New York, USA",
@@ -54,7 +57,21 @@ export default function TeamPage() {
         "Co-author on protein structure files, awarded & pending patents, and peer-reviewed publications.",
     },
     {
+      imgLink: "/images/team/JulianGingoldPhD.jpg",
+      profileLink:
+        "https://doctors.montefioreeinstein.org/providers/1346634433/julian-a-gingold",
+      orgLink: "",
+      name: "Dr. Julian A. Gingold",
+      position: "Reproductive Endocrinologist & Surgeon",
+      organization:
+        "Montefiore Einstein & Albert Einstein College of Medicine, New York, USA",
+      contribution:
+        "Expert in fertility genomics, IVF outcomes research, and minimally invasive reproductive surgery with 50+ peer-reviewed publications and national clinical guideline contributions.",
+    },
+    {
       imgLink: "/images/team/PurushottamPrasaiPhD.png",
+      profileLink: "",
+      orgLink: "",
       name: "Dr. Purushotam Prasai",
       position: "Virologist & Academic",
       organization: "Patan Academy of Health Sciences, Nepal",
@@ -63,6 +80,8 @@ export default function TeamPage() {
     },
     {
       imgLink: "/images/team/HariPrasadKattelPhD.png",
+      profileLink: "",
+      orgLink: "",
       name: "Dr. Hari Prasad Kattel",
       position: "Consultant Microbiologist & Technical Deputy Controller",
       organization:
@@ -72,6 +91,8 @@ export default function TeamPage() {
     },
     {
       imgLink: "/images/team/NareshBahadurKhadka.png",
+      profileLink: "",
+      orgLink: "",
       name: "Naresh Bahadur Khadka",
       position: "Medical Laboratory Technologist (MLS/ASCP)",
       organization: "High-complexity clinical laboratories",
@@ -80,11 +101,23 @@ export default function TeamPage() {
     },
     {
       imgLink: "/images/team/NishantTripathi.png",
+      profileLink: "",
+      orgLink: "",
       name: "Mr. Nishant Tripathi",
       position: "CPA & Financial Expert",
       organization: "California, USA",
       contribution:
         "Brings over 12 years of experience in accounting and finance for research funding and management.",
+    },
+    {
+      imgLink: "/images/team/ThomasMoga.jpg",
+      profileLink: "https://www.dykema.com/people/thomas-t-moga.html",
+      orgLink: "",
+      name: "Thomas T. Moga, J.D.",
+      position: "Intellectual Property & Patent Law Expert",
+      organization: "Dykema Gossett PLLC, USA",
+      contribution:
+        "Over 30 years of experience in global patent portfolio development, biotechnology and pharmaceutical IP protection, and expert testimony in international patent disputes.",
     },
   ];
 
@@ -118,30 +151,40 @@ export default function TeamPage() {
               className="group bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* Photo Avatar */}
-              <div className="mx-auto mb-6 h-24 w-24 rounded-full bg-gradient-to-br from-[#0A84FF] to-[#5AC8FA] p-[2px]">
-                <div className="h-full w-full rounded-full bg-white overflow-hidden">
-                  <Image
-                    src={member.imgLink}
-                    alt={member.name}
-                    width={96}
-                    height={96}
-                    className="h-full w-full object-cover"
-                    priority={index < 3}
-                  />
+              {/* Image + Name (First Link) */}
+              <Link href={member.profileLink || "#"} target="_blank">
+                <div className="cursor-pointer">
+                  <div className="mx-auto mb-6 h-24 w-24 rounded-full bg-gradient-to-br from-[#0A84FF] to-[#5AC8FA] p-[2px]">
+                    <div className="h-full w-full rounded-full bg-white overflow-hidden">
+                      <Image
+                        src={member.imgLink}
+                        alt={member.name}
+                        width={96}
+                        height={96}
+                        className="h-full w-full object-cover"
+                        priority={index < 3}
+                      />
+                    </div>
+                  </div>
+
+                  <h3 className="text-lg font-semibold text-gray-900 hover:text-[#0A84FF] transition">
+                    {member.name}
+                  </h3>
                 </div>
-              </div>
+              </Link>
 
-              <h3 className="text-lg font-semibold text-gray-900">
-                {member.name}
-              </h3>
+              {/* Position + Organization (Second Link) */}
+              <Link href={member.orgLink || "#"} target="_blank">
+                <div className="cursor-pointer">
+                  <p className="mt-1 text-sm font-medium text-[#0A84FF] hover:underline">
+                    {member.position}
+                  </p>
 
-              <p className="mt-1 text-sm font-medium text-[#0A84FF]">
-                {member.position}
-              </p>
-
-              <p className="mt-1 text-sm text-gray-500">
-                {member.organization}
-              </p>
+                  <p className="mt-1 text-sm text-gray-500 hover:underline">
+                    {member.organization}
+                  </p>
+                </div>
+              </Link>
 
               <div className="mx-auto my-4 h-px w-12 bg-gray-200 group-hover:bg-[#0A84FF] transition" />
 
