@@ -89,16 +89,16 @@ export default function ResearchPage() {
       label: "",
       desc: "",
     },
-    {
-      img: Research8Img,
-      label: "",
-      desc: "",
-    },
-    {
-      img: Research9Img,
-      label: "",
-      desc: "",
-    },
+    // {
+    //   img: Research8Img,
+    //   label: "",
+    //   desc: "",
+    // },
+    // {
+    //   img: Research9Img,
+    //   label: "",
+    //   desc: "",
+    // },
   ];
 
   return (

@@ -22,8 +22,8 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
       <div
-        className={`mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
-          scrolled ? "py-1" : "py-2"
+        className={`mx-auto max-w-7xl flex items-center justify-between px-0 sm:px-0 lg:px-0 transition-all duration-300 ${
+          scrolled ? "py-0.5" : "py-1"
         }`}
       >
         {/* Logo */}
@@ -31,10 +31,10 @@ const Header = () => {
           <Image
             src="/AIBioDiscovery-logo-withoutBG.png"
             alt="AI BioDiscovery Logo"
-            width={scrolled ? 48 : 88}
-            height={scrolled ? 48 : 88}
+            width={scrolled ? 68 : 98}
+            height={scrolled ? 68 : 98}
             priority
-            className="object-contain transition-all duration-300 w-12 sm:w-16 lg:w-[88px]"
+            className="object-contain transition-all duration-300 w-28 sm:w-40 lg:w-[120px]"
           />
         </Link>
 
@@ -52,7 +52,7 @@ const Header = () => {
           <Link href="/contact">
             <Button
               text="Learn More"
-              className={`transition-all duration-300 ${
+              className={`transition-all text-[1.10rem] duration-300 ${
                 scrolled ? "px-4 py-1.5 text-sm" : "px-6 py-2"
               }`}
             />
