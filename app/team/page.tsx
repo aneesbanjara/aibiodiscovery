@@ -57,7 +57,7 @@ export default function TeamPage() {
         "Co-author on protein structure files, awarded & pending patents, and peer-reviewed publications.",
     },
     {
-      imgLink: "/images/team/JulianGingoldPhD.jpg",
+      imgLink: "/images/team/JulianGingoldPhD.png",
       profileLink:
         "https://doctors.montefioreeinstein.org/providers/1346634433/julian-a-gingold",
       orgLink: "",

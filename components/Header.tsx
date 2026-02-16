@@ -29,7 +29,7 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3">
           <Image
-            src="/AIBioDiscovery-logo-withoutBG.png"
+            src="/AIBioDiscovery-logo-withoutBG3.png"
             alt="AI BioDiscovery Logo"
             width={scrolled ? 68 : 98}
             height={scrolled ? 68 : 98}
