@@ -13,7 +13,6 @@ import { motion, Variants } from "framer-motion";
 // import Research6AImg from "@/public/images/research/6A.png";
 // import Research8AImg from "@/public/images/research/8A.png";
 // import Research9AImg from "@/public/images/research/9A.png";
-import Research1Img from "@/public/images/research/1.png";
 import Research2Img from "@/public/images/research/2.png";
 import Research3Img from "@/public/images/research/3.png";
 import Research4Img from "@/public/images/research/4.png";
@@ -54,11 +53,11 @@ const fadeRight: Variants = {
 
 export default function ResearchPage() {
   const researchFigures = [
-    {
-      img: Research1Img,
-      label: "",
-      desc: "",
-    },
+    // {
+    //   img: Research1Img,
+    //   label: "",
+    //   desc: "",
+    // },
     {
       img: Research2Img,
       label: "",
@@ -74,16 +73,16 @@ export default function ResearchPage() {
       label: "",
       desc: "",
     },
-    {
-      img: Research5Img,
-      label: "",
-      desc: "",
-    },
-    {
-      img: Research6Img,
-      label: "",
-      desc: "",
-    },
+    // {
+    //   img: Research5Img,
+    //   label: "",
+    //   desc: "",
+    // },
+    // {
+    //   img: Research6Img,
+    //   label: "",
+    //   desc: "",
+    // },
     {
       img: Research7Img,
       label: "",
@@ -124,7 +123,7 @@ export default function ResearchPage() {
       {/* Phase Sections */}
       {[
         {
-          phase: "PHASE 1",
+          phase: "STEP 1",
           icon: <Search className="text-blue-700 w-5 h-5 sm:w-6 sm:h-6" />,
           title: "In Silico Evaluation",
           desc: "Our process begins with powerful computational analysis. We sift through vast datasets to identify promising candidates with high potential for therapeutic efficacy.",
@@ -133,18 +132,18 @@ export default function ResearchPage() {
           color: "blue",
         },
         {
-          phase: "PHASE 2",
+          phase: "STEP 2",
           icon: (
             <FlaskConical className="text-purple-700 w-5 h-5 sm:w-6 sm:h-6" />
           ),
           title: "Live Bacteria Evaluation",
-          desc: "Selected candidates undergo rigorous in-vitro testing against both gram-positive and gram-negative bacterial pathogens. By themselves, all but two of these compounds show no antibacterial activity, reducing the risk of resistance development, and show no toxicity in human cell cultures.",
+          desc: "Selected candidates undergo rigorous in-vitro testing against both gram-positive and gram-negative bacterial pathogens. By themselves, these compounds show no antibacterial activity, reducing the risk of resistance development. We have confirmed the safety of our agents via human tissue culture and animal studies.",
           bgLeft: "text-white",
           bgRight: "bg-purple-50 border-purple-100 text-purple-900",
           color: "purple",
         },
         {
-          phase: "PHASE 3",
+          phase: "STEP 3",
           icon: <Beaker className="text-emerald-700 w-5 h-5 sm:w-6 sm:h-6" />,
           title: "Compound Optimization & Combination Discovery",
           desc: "Promising compounds are refined and tested in combination with existing antibiotics to restore their activity. Additional combinations are under development and will be covered in future patent filings.",
@@ -167,7 +166,7 @@ export default function ResearchPage() {
             <DollarSign className="text-yellow-700 w-5 h-5 sm:w-6 sm:h-6" />
           ),
           title: "Financial & Clinical",
-          desc: "AlBioDiscovery is targeting a $20M seed round to fund synthesis and testing of additional compounds, in-vitro validation, and Phase I & II clinical trials in the US.",
+          desc: "AlBioDiscovery is targeting a $20M seed round to fund synthesis and testing of additional compounds, in-vitro validation, and Phase I & II clinical trials in the US and abroad.",
           bgLeft: "bg-yellow-50 border-yellow-100 text-yellow-900",
           bgRight: "text-gray-700",
           color: "yellow",
@@ -320,8 +319,8 @@ export default function ResearchPage() {
           Protecting Our Innovation
         </h2>
         <p className="text-gray-300 text-sm sm:text-base max-w-full sm:max-w-3xl mx-auto leading-relaxed">
-          AlBioDiscovery has filed international patents covering our novel
-          compounds and agent-antibiotic combinations.
+          We have filed patents covering our compounds and agent-antibiotic
+          combinations.
         </p>
       </motion.section>
     </main>

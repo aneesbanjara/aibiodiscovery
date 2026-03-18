@@ -50,30 +50,18 @@ export default function TeamPage() {
       imgLink: "/images/team/ManfredPhilippPhD.png",
       profileLink: "https://fulbright.org/manfred-philipp",
       orgLink: "https://www.gc.cuny.edu/people/manfred-philipp",
-      name: "Dr. Manfred Philipp",
-      position: "Professor Emeritus",
+      name: "Manfred Philipp, PhD",
+      position: "Co-Founder & CEO",
       organization: "CUNY Graduate Center & Lehman College, New York, USA",
       contribution:
         "Co-author on protein structure files, awarded & pending patents, and peer-reviewed publications.",
     },
     {
-      imgLink: "/images/team/JulianGingoldPhD.png",
-      profileLink:
-        "https://doctors.montefioreeinstein.org/providers/1346634433/julian-a-gingold",
-      orgLink: "",
-      name: "Dr. Julian A. Gingold",
-      position: "Reproductive Endocrinologist & Surgeon",
-      organization:
-        "Montefiore Einstein & Albert Einstein College of Medicine, New York, USA",
-      contribution:
-        "Expert in fertility genomics, IVF outcomes research, and minimally invasive reproductive surgery with 50+ peer-reviewed publications and national clinical guideline contributions.",
-    },
-    {
       imgLink: "/images/team/PurushottamPrasaiPhD.png",
       profileLink: "",
       orgLink: "",
-      name: "Dr. Purushotam Prasai",
-      position: "Virologist & Academic",
+      name: "Purushotam Prasai, PhD",
+      position: "Co-Founder & CTO",
       organization: "Patan Academy of Health Sciences, Nepal",
       contribution:
         "Responsible for influenza pandemic preparedness and virology research under CDC grants.",
@@ -82,13 +70,14 @@ export default function TeamPage() {
       imgLink: "/images/team/HariPrasadKattelPhD.png",
       profileLink: "",
       orgLink: "",
-      name: "Dr. Hari Prasad Kattel",
-      position: "Consultant Microbiologist & Technical Deputy Controller",
+      name: "Hari Prasad Kattel, PhD",
+      position: "Advisor, Microbiologist",
       organization:
         "Department of Microbiology, Tribhuvan University Teaching Hospital, Nepal",
       contribution:
         "Leading microbiology research and technical oversight in our studies.",
     },
+
     {
       imgLink: "/images/team/NareshBahadurKhadka.png",
       profileLink: "",
@@ -99,6 +88,19 @@ export default function TeamPage() {
       contribution:
         "Specializes in microbiology, molecular diagnostics, and clinical lab operations.",
     },
+    {
+      imgLink: "/images/team/JulianGingoldPhD.png",
+      profileLink:
+        "https://doctors.montefioreeinstein.org/providers/1346634433/julian-a-gingold",
+      orgLink: "",
+      name: "Dr. Julian A. Gingold",
+      position: "Medical Advisor",
+      organization:
+        "Montefiore Einstein & Albert Einstein College of Medicine, New York, USA",
+      contribution:
+        "Expert in fertility genomics, IVF outcomes research, and minimally invasive reproductive surgery with 50+ peer-reviewed publications and national clinical guideline contributions.",
+    },
+
     {
       imgLink: "/images/team/NishantTripathi.png",
       profileLink: "",

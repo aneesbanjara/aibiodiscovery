@@ -124,10 +124,11 @@ export default function TechnologyPage() {
                 A Breakthrough Against Antibiotic Resistance
               </h2>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed max-w-full sm:max-w-xl">
-                Our AI platform has successfully identified antibacterial
-                compounds that reverse antibiotic resistance in deadly
-                pathogens, a critical step forward in the fight against
-                superbugs.
+                Our algorithm has successfully identified antibacterial
+                compounds that reverse antibiotic resistance, both Gram positive
+                and Gram negative deadly pathogens a critical step forward in
+                the fight against Multi-Drug Resistant (MDR) and Extensively
+                Drug Resistant (XDR) bacteria.
               </p>
             </motion.div>
 
@@ -137,10 +138,10 @@ export default function TechnologyPage() {
               className="w-full md:w-1/3 bg-white rounded-2xl p-6 sm:p-8 shadow-md text-center"
             >
               <p className="text-gray-600 font-semibold mb-1 sm:mb-2 text-sm sm:text-base">
-                New Antibacteria Identified
+                New Compounds Identified
               </p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-900">
-                7
+                11
               </h1>
               <p className="text-green-500 font-semibold text-xs sm:text-sm mt-1 sm:mt-2">
                 That Reverse Antibiotic Resistance

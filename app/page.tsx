@@ -131,7 +131,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div variants={fadeUp}>
-          <SectionText text="Our proprietary AI platform revolutionizes the drug discovery pipeline. By analyzing vast biological datasets, we can identify novel antibiotic candidates at a speed and scale previously unimaginable." />
+          <SectionText text="Our platform revolutionizes the drug discovery pipeline. By analyzing vast biological datasets, we can identify novel antibiotic candidates at a speed and scale previously unimaginable." />
         </motion.div>
 
         <motion.div className="max-w-6xl mx-auto px-6">
