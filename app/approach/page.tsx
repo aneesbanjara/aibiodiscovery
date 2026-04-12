@@ -98,7 +98,7 @@ export default function TechnologyPage() {
               3. Identifying Therapeutics
             </h3>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              We identify new compounds with high efficacy, enabling faster and
+              We have identified new compounds with high efficacy, enabling faster and
               more targeted drug discovery.
             </p>
           </motion.div>

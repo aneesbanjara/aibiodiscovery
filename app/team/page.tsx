@@ -57,7 +57,7 @@ export default function TeamPage() {
         "Co-author on protein structure files, awarded & pending patents, and peer-reviewed publications.",
     },
     {
-      imgLink: "/images/team/PurushottamPrasaiPhD.png",
+      imgLink: "/images/team/PurushottamPrasaiPhD.jpeg",
       profileLink: "",
       orgLink: "",
       name: "Purushotam Prasai, PhD",
@@ -73,7 +73,7 @@ export default function TeamPage() {
       name: "Hari Prasad Kattel, PhD",
       position: "Advisor, Microbiologist",
       organization:
-        "Department of Microbiology, Tribhuvan University Teaching Hospital, Nepal",
+        "Technical Deputy Controller, Department of Microbiology, Tribhuvan University Teaching Hospital, Nepal",
       contribution:
         "Leading microbiology research and technical oversight in our studies.",
     },

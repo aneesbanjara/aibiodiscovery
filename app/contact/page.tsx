@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone } from "lucide-react";
+import { Phone, MailIcon, PrinterIcon } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -32,7 +32,27 @@ export default function ContactPage() {
             </p>
             <p className="text-2xl font-medium mt-2 flex items-center gap-3">
               <Phone />
-              +1 914 523 1729
+              <a href="tel:+1 914 523 1729">+1 914 523 1729</a>
+            </p>
+          </div>
+          <div>
+            <p className="text-sm uppercase tracking-widest text-gray-500">
+              Email
+            </p>
+            <p className="text-2xl font-medium mt-2 flex items-center gap-3">
+              <MailIcon />
+              <a href="mailto:management@aibiodiscovery.us">
+                management@aibiodiscovery.us
+              </a>
+            </p>
+          </div>
+          <div>
+            <p className="text-sm uppercase tracking-widest text-gray-500">
+              Fax
+            </p>
+            <p className="text-2xl font-medium mt-2 flex items-center gap-3">
+              <PrinterIcon />
+              (833) 937-1861
             </p>
           </div>
         </div>

@@ -155,7 +155,7 @@ export default function ResearchPage() {
           phase: "NEXT STEPS",
           icon: <Activity className="text-green-400 w-5 h-5 sm:w-6 sm:h-6" />,
           title: "Research",
-          desc: "We will further confirm the safety of our agents via human tissue culture studies. Phase I trials on healthy volunteers will establish safety and dosage, followed by trials on infected individuals to test efficacy in real-world conditions.",
+          desc: "We have further confirmed the safety of our agents via human tissue culture studies. Phase I trials on healthy volunteers will establish safety and dosage, followed by trials on infected individuals to test efficacy in real-world conditions.",
           bgLeft: "text-white",
           bgRight: "bg-gray-700 text-white",
           color: "green",
