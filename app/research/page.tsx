@@ -285,9 +285,38 @@ export default function ResearchPage() {
             </p>
           </div>
         </motion.div>
+        {/* Featured Figure 2 */}
+        <motion.div
+          variants={fadeUp}
+          className="max-w-6xl mx-auto mb-16 bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden"
+        >
+          <div className="relative w-full h-[420px] bg-gray-100">
+            <Image
+              src={researchFigures[1].img}
+              alt={researchFigures[1].label}
+              fill
+              className="object-contain p-8"
+              unoptimized
+            />
+          </div>
+
+          <div className="p-6 sm:p-8">
+            {/* <p className="text-xs font-semibold uppercase tracking-widest text-blue-700 mb-2">
+              {researchFigures[0].label || "Featured Figure"}
+            </p> */}
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-4xl">
+              {researchFigures[0].desc || (
+                <>
+                  Docking an Fmoc-Peptide to <em>E.coli</em> TEM-1 <em>beta</em>
+                  -Lactamase
+                </>
+              )}
+            </p>
+          </div>
+        </motion.div>
 
         {/* Supporting Figures */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {researchFigures.slice(1).map((item, idx) => (
             <motion.div
               key={idx}
@@ -305,17 +334,16 @@ export default function ResearchPage() {
               </div>
 
               <div className="p-5">
-                {/* <p className="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-2">
                   {item.label || `Figure ${idx + 2}`}
-                </p> */}
+                </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  Docking an Fmoc-Peptide to <em>E.coli</em> TEM-1 <em>beta</em>
-                  -Lactamase{" "}
+                  {item.desc || "Supporting experimental validation result."}
                 </p>
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </motion.section>
 
       {/* Protecting Innovation */}
