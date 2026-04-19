@@ -40,13 +40,13 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION */}
       <motion.section
-        className="relative bg-cover bg-center text-white flex flex-col justify-center items-center text-center h-[80vh]"
-        style={{ backgroundImage: "url('/images/aiBioDiscoveryLP.png')" }}
+        className="relative bg-cover bg-center text-white flex flex-col justify-center items-center text-center h-[90vh]"
+        style={{ backgroundImage: "url('/images/aiBioDiscoveryLP2.png')" }}
         initial="hidden"
         animate="visible"
         variants={fadeUp}
       >
-        <div className="bg-black/50 absolute inset-0" />
+        <div className="bg-black/10 absolute inset-0" />
 
         <motion.div className="relative z-10 max-w-2xl px-4" variants={fadeUp}>
           <motion.h1

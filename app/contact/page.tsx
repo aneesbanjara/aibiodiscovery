@@ -23,7 +23,7 @@ export default function ContactPage() {
             <p className="text-sm uppercase tracking-widest text-gray-500">
               Organization
             </p>
-            <p className="text-2xl font-medium mt-2">AI BioDiscovery INC</p>
+            <p className="text-2xl font-medium mt-2">AiBioDiscovery Inc.</p>
           </div>
 
           <div>

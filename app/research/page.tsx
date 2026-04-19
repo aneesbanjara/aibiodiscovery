@@ -16,11 +16,12 @@ import { motion, Variants } from "framer-motion";
 import Research2Img from "@/public/images/research/2.png";
 import Research3Img from "@/public/images/research/3.png";
 import Research4Img from "@/public/images/research/4.png";
-import Research5Img from "@/public/images/research/5.png";
-import Research6Img from "@/public/images/research/6.png";
+// import Research5Img from "@/public/images/research/5.png";
+// import Research6Img from "@/public/images/research/6.png";
 import Research7Img from "@/public/images/research/7.png";
-import Research8Img from "@/public/images/research/8.png";
-import Research9Img from "@/public/images/research/9.png";
+// import Research8Img from "@/public/images/research/8.png";
+// import Research9Img from "@/public/images/research/9.png";
+import Research10Img from "@/public/images/research/10.jpeg";
 import Image from "next/image";
 
 /* Animation Variants */
@@ -64,15 +65,20 @@ export default function ResearchPage() {
       desc: "",
     },
     {
-      img: Research3Img,
+      img: Research10Img,
       label: "",
       desc: "",
     },
-    {
-      img: Research4Img,
-      label: "",
-      desc: "",
-    },
+    // {
+    //   img: Research3Img,
+    //   label: "",
+    //   desc: "",
+    // },
+    // {
+    //   img: Research4Img,
+    //   label: "",
+    //   desc: "",
+    // },
     // {
     //   img: Research5Img,
     //   label: "",
@@ -83,11 +89,11 @@ export default function ResearchPage() {
     //   label: "",
     //   desc: "",
     // },
-    {
-      img: Research7Img,
-      label: "",
-      desc: "",
-    },
+    // {
+    //   img: Research7Img,
+    //   label: "",
+    //   desc: "",
+    // },
     // {
     //   img: Research8Img,
     //   label: "",
@@ -266,12 +272,16 @@ export default function ResearchPage() {
           </div>
 
           <div className="p-6 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-widest text-blue-700 mb-2">
+            {/* <p className="text-xs font-semibold uppercase tracking-widest text-blue-700 mb-2">
               {researchFigures[0].label || "Featured Figure"}
-            </p>
+            </p> */}
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-4xl">
-              {researchFigures[0].desc ||
-                "Key experimental result demonstrating compound efficacy and validation."}
+              {researchFigures[0].desc || (
+                <>
+                  Bactericidal activity of compound AB-4 on{" "}
+                  <em>Acinetobacter baumannii</em>
+                </>
+              )}
             </p>
           </div>
         </motion.div>
@@ -295,11 +305,12 @@ export default function ResearchPage() {
               </div>
 
               <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-2">
+                {/* <p className="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-2">
                   {item.label || `Figure ${idx + 2}`}
-                </p>
+                </p> */}
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  {item.desc || "Supporting experimental validation result."}
+                  Docking an Fmoc-Peptide to <em>E.coli</em> TEM-1 <em>beta</em>
+                  -Lactamase{" "}
                 </p>
               </div>
             </motion.div>
