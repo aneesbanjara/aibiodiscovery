@@ -57,7 +57,7 @@ export default function TeamPage() {
         "Co-author on protein structure files, awarded & pending patents, and peer-reviewed publications.",
     },
     {
-      imgLink: "/images/team/PurushottamPrasaiPhD.jpeg",
+      imgLink: "/images/team/PurushottamPrasaiPh.png",
       profileLink: "",
       orgLink: "",
       name: "Purushotam Prasai, PhD",

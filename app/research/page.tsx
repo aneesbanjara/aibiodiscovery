@@ -278,7 +278,7 @@ export default function ResearchPage() {
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-4xl">
               {researchFigures[0].desc || (
                 <>
-                  Bactericidal activity of compound AB-4 on{" "}
+                  Anti bacterial activity of compound AB-4 on{" "}
                   <em>Acinetobacter baumannii</em>
                 </>
               )}
